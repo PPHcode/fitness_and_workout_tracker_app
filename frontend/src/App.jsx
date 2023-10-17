@@ -10,11 +10,11 @@ import Home from './Pages/Home'
 const App = () => {
   return (
     <Routes>
-      <Route path = '/' element= {Home}/>
-      <Route path = '/users/create' element= {create}/>
-      <Route path = '/users/edit/:id' element= {edit}/>
-      <Route path = '/users/delete/:id' element= {deleteUser}/>
-      <Route path = '/users/view/:id' element= {view}/>
+      <Route path = '/' element= {<Home/>}/>
+      <Route path = '/users/create' element= {<create/>}/>
+      <Route path = '/users/edit/:id' element= {<edit/>}/>
+      <Route path = '/users/delete/:id' element= {<deleteUser/>}/>
+      <Route path = '/users/view/:id' element= {<view/>}/>
     </Routes>
   )
 }

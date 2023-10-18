@@ -1,20 +1,21 @@
 import React from 'react'
-import { Route,Routes } from 'react-router-dom'
-import create from './Pages/create'
-import deleteUser from './Pages/deleteUser'
-import edit from './Pages/edit'
-import view from './Pages/view'
+import { Routes,Route } from 'react-router-dom'
+import Create from './Pages/Create'
+import DeleteUser from './Pages/DeleteUser'
+import Edit from './Pages/Edit'
+
 import Home from './Pages/Home'
+import View from './Pages/view'
 
 
 const App = () => {
   return (
     <Routes>
       <Route path = '/' element= {<Home/>}/>
-      <Route path = '/users/create' element= {<create/>}/>
-      <Route path = '/users/edit/:id' element= {<edit/>}/>
-      <Route path = '/users/delete/:id' element= {<deleteUser/>}/>
-      <Route path = '/users/view/:id' element= {<view/>}/>
+      <Route path = '/users/create' element= {<Create/>}/>
+      <Route path = '/users/edit/:id' element= {<Edit/>}/>
+      <Route path = '/users/delete/:id' element= {<DeleteUser/>}/>
+      <Route path = '/users/view/:id' element= {<View/>}/>
     </Routes>
   )
 }

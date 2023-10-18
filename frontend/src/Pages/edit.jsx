@@ -1,11 +1,11 @@
 import React from 'react'
 
-const edit = () => {
+const Edit = () => {
   return (
     <div>
-      
+      hy
     </div>
   )
 }
 
-export default edit
+export default Edit

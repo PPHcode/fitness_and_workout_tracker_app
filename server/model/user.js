@@ -9,7 +9,10 @@ import mongoose from 'mongoose';
 //   -email
 //   -image
 const UserSchema = mongoose.Schema(
-  {
+  { Id: {
+    type: String,
+    required: true,
+  },
     name: {
       type: String,
       required: true,

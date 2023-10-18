@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import express from "express";
 import { User } from "../model/user.js";
 
 
@@ -104,7 +104,7 @@ router.put('/:id', async (request,response) => {
 });
 
 //Route for delete a user
-router.delete('/user/:id', async (request,response) => {
+router.delete('/:id', async (request,response) => {
    try{
       
       const {id}= request.params; 

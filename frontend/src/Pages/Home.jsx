@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import spinner from '../Components/spinner'
+import Spinner from '../Components/Spinner'
 import { Link } from 'react-router-dom'
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
@@ -13,7 +13,7 @@ const Home = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
     //show as tables
-    const [showType, setShowType] = useState('table');
+    //const [showType, setShowType] = useState('table');
 
     useEffect(() => {
         setLoading(true);
@@ -38,12 +38,12 @@ const Home = () => {
                     </Link>
                 </div></div>
             {loading ? (
-                <spinner />
+                <Spinner />
             ) : (
                 <table className='w-full border-separate border-spacing-2'>
                     <thead>
                         <tr>
-                            <th className='border border-slate-600 rounded-md'>No</th>
+                            <th className='border border-slate-600 rounded-md'>Id</th>
                             <th className='border border-slate-600 rounded-md'>Name</th>
                             <th className='border border-slate-600 rounded-md max-md:hidden'>Height</th>
                             <th className='border border-slate-600 rounded-md max-md:hidden'>Weight</th>
@@ -59,24 +59,26 @@ const Home = () => {
                             <tr key={user._id} className='h-8'>
                                 <td className='border border-slate-700 rounded-md text-center'>{index + 1}</td>
                                 <td className='border border-slate-700 rounded-md text-center'>{user.name}</td>
-                                <td className='border border-slate-700 rounded-md text-center max-md:hidden'>{user.height}</td>
-                                <td className='border border-slate-700 rounded-md text-center max-md:hidden'>{user.weight}</td>
-                                <td className='border border-slate-700 rounded-md text-center max-md:hidden'>{user.age}</td>
-                                <td className='border border-slate-700 rounded-md text-center max-md:hidden'>{user.phone}</td>
-                                <td className='border border-slate-700 rounded-md text-center max-md:hidden'>{user.password}</td>
-                                <td className='border border-slate-700 rounded-md text-center max-md:hidden'>{user.email}</td>
+                                <td className='border border-slate-700 rounded-md text-center '>{user.height}</td>
+                                <td className='border border-slate-700 rounded-md text-center '>{user.weight}</td>
+                                <td className='border border-slate-700 rounded-md text-center '>{user.age}</td>
+                                <td className='border border-slate-700 rounded-md text-center '>{user.phone}</td>
+                                <td className='border border-slate-700 rounded-md text-center '>{user.password}</td>
+                                <td className='border border-slate-700 rounded-md text-center '>{user.email}</td>
                                 <td className='border border-slate-700 rounded-md text-center '>
 
                                     <div className='flex justify-center gap-x-4'>
-                                        <Link to={'/users/view/${user._id}'}>
+                                        <Link to={`/users/view/${user._id}`}>
                                             <BsInfoCircle className='text-2xl text-green-800' />
                                         </Link>
-                                        <Link to={'/users/edit/${user._id}'}>
+                                        <Link to={`/users/edit/${user._id}`}>
                                             <AiOutlineEdit className='text-2xl text-yellow-800' />
                                         </Link>
-                                        <Link to={'/users/delete/${user._id}'}>
+                                        <Link to={`/users/delete/${user._id}`}>
                                             <MdOutlineDelete className='text-2xl text-yellow-800' />
                                         </Link>
+
+
                                     </div>
                                 </td>
                             </tr>

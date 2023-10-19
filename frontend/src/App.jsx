@@ -6,12 +6,14 @@ import Edit from './Pages/Edit'
 
 import Home from './Pages/Home'
 import View from './Pages/view'
+import HomeMain from './Pages/HomeMain'
 
 
 const App = () => {
   return (
     <Routes>
-      <Route path = '/' element= {<Home/>}/>
+      <Route path = '/' element= {<HomeMain/>}/>
+      <Route path = '/home' element= {<Home/>}/>
       <Route path = '/users/create' element= {<Create/>}/>
       <Route path = '/users/edit/:id' element= {<Edit/>}/>
       <Route path = '/users/delete/:id' element= {<DeleteUser/>}/>

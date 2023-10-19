@@ -5,6 +5,8 @@ import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineDelete } from 'react-icons/md';
 
+
+
 const SingleUser = ({user}) => {
   return (
     <div key={user._id}
@@ -13,7 +15,6 @@ const SingleUser = ({user}) => {
                     <h2 className='absolute top-1 right-2 px-4 py-1 bg-red-300 rounded-lg'>
                         {user.name}
                     </h2>
-                    <h4 className='my-2 text-gray-500'>{user.id}</h4>
                     <div className='flex justify-start items-center gap-x-2'>
                         <PiBookOpenTextLight className='text-red-300 text-2xl' />
                         <h2 className='my-1'>{user.weight}</h2>
@@ -21,7 +22,7 @@ const SingleUser = ({user}) => {
                     <div className='flex justify-start items-center gap-x-2'>
                         <BiUserCircle className='text-red-300 text-2xl' />
                         <h2 className='my-1'>{user.height}</h2>
-                    </div>
+                    </div> 
 
                     <div className='flex justify-between items-center gap-x-2 mt-4 p-4'>
                         <Link to={`/users/view/${user._id}`}>

@@ -3,13 +3,13 @@ import BackButton from '../Components/BackButton';
 import Spinner from '../Components/Spinner';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import { useSnackbar } from 'notistack';
 
 const DeleteUser = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
-  //const { enqueueSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleDeleteUser = () => {
     setLoading(true);
@@ -17,13 +17,13 @@ const DeleteUser = () => {
       .delete(`http://localhost:5555/users/${id}`)
       .then(() => {
         setLoading(false);
-        
+        enqueueSnackbar('Deleted successfully', { variant: 'success' });
         navigate('/');
       })
       .catch((error) => {
         setLoading(false);
         // alert('An error happened. Please Chack console');
-        
+        enqueueSnackbar('Error', { variant: 'error' });
         console.log(error);
       });
   };

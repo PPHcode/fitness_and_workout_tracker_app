@@ -55,7 +55,7 @@ const Home = () => {
                 </Link>
             </div>
             {loading ? 
-                <Spinner />
+                (<Spinner />)
              :  showType === 'table' ? (
                 <UserTable users={users} />
 

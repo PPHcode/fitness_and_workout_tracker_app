@@ -8,7 +8,8 @@ import { User } from "../model/user.js";
 
 router.post('/', async (request,response) => {
     try{
-       if(
+       if( 
+         !request.body.Id ||
            !request.body.name ||
            !request.body.weight ||
            !request.body.height ||
@@ -22,13 +23,14 @@ router.post('/', async (request,response) => {
            });
        }
        const newUser = {
+           Id: request.body.Id,
            name: request.body.name,
            weight: request.body.weight,
            height: request.body.height,
            age: request.body.age,
            phone: request.body.phone,
            password: request.body.password,
-           email: request.body.email,
+           email: request.body.email
        };
 const user = await User.create(newUser);
 return response.status(201).send(user);
@@ -43,7 +45,7 @@ return response.status(201).send(user);
 //Route to get all users from the database
 router.get('/', async (request,response) => {
    try{
-           
+          
 const users = await User.find({});
 return response.status(200).json({
    count: users.length,

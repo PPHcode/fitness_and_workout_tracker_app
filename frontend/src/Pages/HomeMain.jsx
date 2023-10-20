@@ -1,18 +1,13 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './HomeMain.css'
-// import google from '../images/google.png'
-// import apple from '../images/apple.png'
-// import fb from '../images/fb.png'
+
 
 function HomeMain() {
   const navigate = useNavigate(); // Initialize the useNavigate hook
 
   const handleCreateAccount = () => {
-    // Handle the logic for creating the account here
-    // For example, you can send a request to your API to create the account
 
-    // After creating the account, navigate to the "/home" route
     navigate('/home');
   };
   return (
@@ -41,7 +36,7 @@ function HomeMain() {
       </div>
 
       <div className='create2'>
-        {/* <SideContainer imageDimensions="/frame8.svg" /> */}
+        
         <div className='content'>
           <h2 className='title'>Create Account</h2>
 
@@ -50,13 +45,14 @@ function HomeMain() {
           <button classname='btn' onClick={handleCreateAccount}>Log In</button>
           <a className='link' href=''>Already have an Account? Log in</a>
           <div className='media'>
-            {/* <img className='mediaicon' src= {google}></img>
-            <img className='mediaicon' src= {apple}></img>
-            <img className='mediaicon fb' src= {fb}></img> */}
+            
           </div>
-          <p className='ref'>-or Create Account Via Email-</p>
+          <button className='ref'onClick={handleCreateAccount} >-or Create Account Via Email-</button>
         </div>
       </div>
+
+      <div className='create3'></div>
+
     </div>
   )
 }

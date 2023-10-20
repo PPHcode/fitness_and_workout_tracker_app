@@ -4,7 +4,7 @@ import Spinner from '../Components/Spinner';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-
+import backgroundImage from '../images/img7.jpeg'; 
 
 
 const Edit = () => {
@@ -59,7 +59,7 @@ const Edit = () => {
       .then(() => {
         setLoading(false);
         enqueueSnackbar(' Edited successfully', { variant: 'success' });
-        navigate('/');
+        navigate('/home');
       })
       .catch((error) => {
         setLoading(false);
@@ -70,9 +70,17 @@ const Edit = () => {
   };
 
   return (
-    <div className='p-4'>
+    <div
+            className='p-4 bg-cover bg-center h-screen'
+            style={{
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundSize: 'cover',
+                height: '150vh',
+                opacity: 1,
+            }}
+        >
       <BackButton />
-      <h1 className='text-3xl my-4'>Edit User</h1>
+      <h1 className='text-3xl my-4 font-bold'>Edit User</h1>
       {loading ? <Spinner /> : ''}
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
         <div className='my-4'>
@@ -94,7 +102,7 @@ const Edit = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Weight</label>
+          <label className='text-xl mr-4 text-gray-500 text-black'>Weight</label>
           <input
             type='number'
             value={weight}
@@ -103,7 +111,7 @@ const Edit = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Height</label>
+          <label className='text-xl mr-4 text-gray-500 text-black'>Height</label>
           <input
             type='number'
             value={height}
@@ -112,7 +120,7 @@ const Edit = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Age</label>
+          <label className='text-xl mr-4 text-gray-500 text-black'>Age</label>
           <input
             type='number'
             value={age}
@@ -121,7 +129,7 @@ const Edit = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Phone</label>
+          <label className='text-xl mr-4 text-gray-500 text-black'>Phone</label>
           <input
             type='number'
             value={phone}
@@ -130,7 +138,7 @@ const Edit = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Password</label>
+          <label className='text-xl mr-4 text-gray-500 text-black'>Password</label>
           <input
             type='text'
             value={password}
@@ -139,7 +147,7 @@ const Edit = () => {
           />
           </div>
           <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Email</label>
+          <label className='text-xl mr-4 text-gray-500 text-black'>Email</label>
           <input
             type='text'
             value={email}

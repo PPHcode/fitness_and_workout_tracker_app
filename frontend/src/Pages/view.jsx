@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import BackButton from '../Components/BackButton';
 import Spinner from '../Components/Spinner';
+import backgroundImage from '../images/img8.jpg'; 
 
 const View = () => {
   const [users, setUsers] = useState({});
@@ -24,7 +25,15 @@ const View = () => {
   }, []);
 
   return (
-    <div className='p-4'>
+    <div
+            className='p-4 bg-cover bg-center h-screen'
+            style={{
+                backgroundImage: `url(${backgroundImage})`,
+                backgroundSize: 'cover',
+                //height: '150vh',
+                opacity: 1,
+            }}
+        >
       <BackButton />
       <h1 className='text-3xl my-4'>View</h1>
       {loading ? (

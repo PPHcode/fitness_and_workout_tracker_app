@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './HomeMain.css'
+import NavBar from './navBar';
 
 
 function HomeMain() {
@@ -13,12 +14,7 @@ function HomeMain() {
   return (
 
     <div className='main'>
-      <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-      </div>
+      <NavBar/>
 
       <div class="create">
 
@@ -51,7 +47,7 @@ function HomeMain() {
         </div>
       </div>
 
-      <div className='create3'></div>
+      
 
     </div>
   )

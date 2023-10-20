@@ -14,7 +14,7 @@ const UserTable  = ({users}) => {
                             <th className='border border-slate-600 rounded-md max-md:hidden'>Weight</th>
                             <th className='border border-slate-600 rounded-md max-md:hidden'>Age</th>
                             <th className='border border-slate-600 rounded-md max-md:hidden'>Phone</th>
-                            <th className='border border-slate-600 rounded-md max-md:hidden'>Password</th>
+                            {/* /<th className='border border-slate-600 rounded-md max-md:hidden'>Password</th> */}
                             <th className='border border-slate-600 rounded-md max-md:hidden'>Email</th>
                             <th className='border border-slate-600 rounded-md '>Operations</th>
                         </tr>
@@ -28,7 +28,7 @@ const UserTable  = ({users}) => {
                                 <td className='border border-slate-700 rounded-md text-center '>{user.weight}</td>
                                 <td className='border border-slate-700 rounded-md text-center '>{user.age}</td>
                                 <td className='border border-slate-700 rounded-md text-center '>{user.phone}</td>
-                                <td className='border border-slate-700 rounded-md text-center '>{user.password}</td>
+                                {/* <td className='border border-slate-700 rounded-md text-center '>{user.password}</td> */}
                                 <td className='border border-slate-700 rounded-md text-center '>{user.email}</td>
                                 <td className='border border-slate-700 rounded-md text-center '>
 

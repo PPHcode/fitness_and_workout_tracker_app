@@ -72,7 +72,7 @@ const Create = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500'>Name</label>
+          <label className='text-xl mr-4 text-gray-500 text-black'>Name</label>
           <input
             type='text'
             value={name}
@@ -81,7 +81,7 @@ const Create = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500 text-black'>Weight</label>
+          <label className='text-xl mr-4 text-gray-500 text-blue'>Weight(kg)</label>
           <input
             type='number'
             value={weight}
@@ -90,7 +90,7 @@ const Create = () => {
           />
         </div>
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500 text-black'>Height</label>
+          <label className='text-xl mr-4 text-gray-500 text-black'>Height(inches)</label>
           <input
             type='number'
             value={height}

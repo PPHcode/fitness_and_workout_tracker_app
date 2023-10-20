@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 import Spinner from '../Components/Spinner';
 import { Link } from 'react-router-dom';
@@ -6,12 +8,19 @@ import { MdOutlineAddBox } from 'react-icons/md';
 import UserTable from '../Components/home/UserTable';
 import UserDetails from '../Components/home/UserDetails';
 import backgroundImage from '../images/img3.jpg'; 
-
+import LoadingButton from '@mui/lab/LoadingButton';
+import SaveIcon from '@mui/icons-material/Save';
+import Stack from '@mui/material/Stack';
+import DeleteIcon from '@mui/icons-material/Delete';
+import LogoutIcon from '@mui/icons-material/Logout';
+import IconButton from '@mui/material/IconButton';
 const Home = () => {
+    const navigate = useNavigate();
+
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [showType, setShowType] = useState('table');
-
+    
     useEffect(() => {
         setLoading(true);
         axios
@@ -25,7 +34,13 @@ const Home = () => {
                 setLoading(false);
             });
     }, []);
-
+    const handleLogout = () => {
+        console.log("Logout button clicked"); // Add this line
+        // Perform your logout logic here, for example, clearing user session, etc.
+        // After performing the logout logic, navigate to the homepage
+        navigate('/');
+    };
+    
     return (
         <div
             className='p bg-cover bg-center h-screen'
@@ -49,6 +64,12 @@ const Home = () => {
                     Details
                 </button>
             </div>
+            
+            <div onClick={handleLogout}>
+            <IconButton aria-label="delete" size="large" disabled color="primary" onClick={handleLogout}>
+        <LogoutIcon />
+      </IconButton>
+      </div>
 
             <div className='flex justify-between items-center'>
                 <h1 className='text-3xl my-8 font-bold'>Users List</h1>
